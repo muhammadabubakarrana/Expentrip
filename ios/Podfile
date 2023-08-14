@@ -21,7 +21,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'RnTemplate0716' do
+target 'Expentrip' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -43,7 +43,7 @@ target 'RnTemplate0716' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'RnTemplate0716Tests' do
+  target 'ExpentripTests' do
     inherit! :complete
     # Pods for testing
   end

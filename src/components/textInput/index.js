@@ -111,7 +111,7 @@ const Colored = ({
     );
 }
 const Bordered = ({
-    onPress, iconContainerStyle, autoFocus,
+    onPress, iconContainerStyle, autoFocus,keyboardType,
     //right params
     right, iconNameRight, iconTypeRight, iconSizeRight, iconColorRight, iconStyleRight, onPressIconRight,
     //left params
@@ -152,6 +152,7 @@ const Bordered = ({
                         </Wrapper>
                         :
                         <TextInput
+                        keyboardType={keyboardType}
                             onChangeText={onChangeText}
                             value={value}
                             placeholder={placeholder}
@@ -343,9 +344,10 @@ const Underlined = ({
 }
 
 
-const SearchBar = ({ value, placeholder, inputContainerStyle, onChangeText, right, onPressCross, ...props }) => {
+const SearchBar = ({ value, placeholder, inputContainerStyle, onChangeText, right, onPressCross,keyboardType, ...props }) => {
     return (
         <Colored
+        keyboardType={keyboardType}
             value={value}
             onChangeText={onChangeText}
             iconNameLeft="search"

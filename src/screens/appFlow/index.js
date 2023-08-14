@@ -1,3 +1,7 @@
-import Home from './home'
+import Home from './home';
+import AddTrips from './addTips';
+import AddExpense from './addExpense';
+import TripExpenses from './TripExpenses';
 
-export { Home }
+
+export {Home, AddTrips, AddExpense, TripExpenses};

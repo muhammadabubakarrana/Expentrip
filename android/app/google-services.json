@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "235370682019",
+    "project_id": "expentrip-8248a",
+    "storage_bucket": "expentrip-8248a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235370682019:android:ec7a5ffdbca9e41a809116",
+        "android_client_info": {
+          "package_name": "com.Expentrip.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235370682019-0tgcmts0l17q3mu52t58hggl11osv3qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Expentrip.app",
+            "certificate_hash": "0ff7c4b1e62e085098b7cfcc1596f0c50635ba55"
+          }
+        },
+        {
+          "client_id": "235370682019-n21f79e1e3u583mgkiecfd5qalidoh5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKepK4XiAasYQv5zq_qDC-dG9tvnK2-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235370682019-ke38gbhjqhv9j4qdm6blhlqp1g3o8jdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

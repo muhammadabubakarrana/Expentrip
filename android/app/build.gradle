@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services"
 apply plugin: "com.facebook.react"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
@@ -94,9 +95,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.rntemplate0716"
+    namespace "com.Expentrip.app"
     defaultConfig {
-        applicationId "com.rntemplate0716"
+        applicationId "com.Expentrip.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -152,7 +153,12 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    // If your app supports Android versions before Ice Cream Sandwich (API level 14)
+    // implementation 'com.facebook.fresco:animated-base-support:1.3.0'
 
+     // For animated GIF support
+     implementation 'com.facebook.fresco:animated-gif:2.5.0'
+    implementation platform('com.google.firebase:firebase-bom:32.2.2')
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
@@ -169,3 +175,4 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+//apply plugin: 'com.google.gms.google-services'

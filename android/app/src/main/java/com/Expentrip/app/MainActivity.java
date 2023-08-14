@@ -1,4 +1,4 @@
-package com.rntemplate0716;
+package com.Expentrip.app;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RnTemplate0716";
+    return "Expentrip";
   }
 @Override
   protected void onCreate(Bundle savedInstanceState) {
