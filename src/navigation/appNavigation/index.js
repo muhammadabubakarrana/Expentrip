@@ -43,6 +43,14 @@ const AppNavigation = () => {
           //title: 'Home'
         }}
       />
+      <AppStack.Screen
+        name={routes.AccountSettings}
+        component={App.AccountSettings}
+        options={{
+          headerShown: false,
+          //title: 'Home'
+        }}
+      />
     </AppStack.Navigator>
   );
 };

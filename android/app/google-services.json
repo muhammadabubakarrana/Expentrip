@@ -7,14 +7,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:235370682019:android:ec7a5ffdbca9e41a809116",
+        "mobilesdk_app_id": "1:235370682019:android:3743574dc742f088809116",
         "android_client_info": {
           "package_name": "com.Expentrip.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "235370682019-0tgcmts0l17q3mu52t58hggl11osv3qb.apps.googleusercontent.com",
+          "client_id": "235370682019-e2m97gvoudpc8n4jm1ufofq65l5jh9cs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.Expentrip.app",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "client_id": "235370682019-n21f79e1e3u583mgkiecfd5qalidoh5v.apps.googleusercontent.com",
+          "client_id": "235370682019-6smcubefu1dtpgkmb13egod2i7kh9n6d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "235370682019-ke38gbhjqhv9j4qdm6blhlqp1g3o8jdl.apps.googleusercontent.com",
+              "client_id": "235370682019-6smcubefu1dtpgkmb13egod2i7kh9n6d.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

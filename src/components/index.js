@@ -18,11 +18,12 @@ import * as Headers from './headers';
 import * as Chips from './chips';
 import * as StatusBars from './statusBars';
 import * as Pickers from './pickers';
-export * from "./myLoader";
-export * from "./showToast";
-export * from "./myModal"
+export * from './myLoader';
+import Map from './map';
+////import {Map} from './map';
 
 export {
+  Map,
   ExpenseCard,
   EmptyList,
   Wrapper,

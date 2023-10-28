@@ -16,7 +16,7 @@ const AuthNavigation = () => {
         component={Auth.Welcome}
         options={{
           headerShown: false,
-          title: 'Welcome',
+          // title: 'Welcome',
         }}
       />
       <AuthStack.Screen
@@ -34,6 +34,33 @@ const AuthNavigation = () => {
         options={{
           //headerShown: false,
           title: 'Sign Up',
+        }}
+      />
+      <AuthStack.Screen
+        name={routes.forgotPassword}
+        component={Auth.ForgotPassword}
+        options={{
+          headerShown: false,
+          //title: 'Sign In',
+          //  presentation: 'fullScreenModal',
+        }}
+      />
+      <AuthStack.Screen
+        name={routes.PhoneVerification}
+        component={Auth.PhoneVerification}
+        options={{
+          headerShown: false,
+          //title: 'Sign In',
+          //  presentation: 'fullScreenModal',
+        }}
+      />
+      <AuthStack.Screen
+        name={routes.CodeVerification}
+        component={Auth.CodeVerification}
+        options={{
+          headerShown: false,
+          //title: 'Sign In',
+          //  presentation: 'fullScreenModal',
         }}
       />
     </AuthStack.Navigator>

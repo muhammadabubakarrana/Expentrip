@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {TouchableOpacity, Image} from 'react-native';
 import {totalSize, width, height} from 'react-native-dimension';
 import {
   Toasts,
@@ -11,6 +11,7 @@ import {
   Spacer,
   Text,
   MyLoader,
+  Images,
 } from '../../../components';
 import {
   appImages,
@@ -23,10 +24,16 @@ import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import {
+  GoogleSignin,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
 
 function Signin(props) {
   const [showLoader, setShowLoader] = useState(false);
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
+  const [user, setUser] = useState(false);
+
   const {navigate} = props.navigation;
 
   const {
@@ -141,7 +148,17 @@ function Signin(props) {
                 </Text>
               )}
             </Wrapper>
-            <Spacer isBasic />
+            <Wrapper marginVerticalBase>
+              <Text
+                onPress={() => navigate(routes.forgotPassword)}
+                alignTextCenter
+                isLarge
+                isBoldFont
+                style={{color: 'green'}}>
+                Forgot Password?
+              </Text>
+            </Wrapper>
+
             {showLoader ? (
               <MyLoader isVisible={showLoader} />
             ) : (

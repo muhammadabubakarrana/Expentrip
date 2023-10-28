@@ -10,8 +10,8 @@ import {
   Toasts,
   Text,
   Spacer,
-  ShowToast,
   MyLoader,
+  StatusBars,
 } from '../../../components';
 import {appImages, appStyles, categories, colors} from '../../../services';
 import {width, height, totalSize} from 'react-native-dimension';
@@ -20,7 +20,6 @@ import {goBack} from '../../../navigation/rootNavigation';
 
 function AddExpense(props) {
   const {id} = props.route.params;
-  // const {id} = props.route.paramas;
   const [Title, setTitle] = useState('');
   const [Amount, setAmount] = useState('');
   const [Category, setCategory] = useState('');
@@ -38,7 +37,6 @@ function AddExpense(props) {
       });
       setLoading(false);
       goBack();
-      // navigate(routes.home);
       Toasts.Success('Expense ADDED');
     } else {
       Toasts.Error('Please fill all boxes');
@@ -53,19 +51,14 @@ function AddExpense(props) {
     {id: 4, name: 'other'},
   ];
 
-  const handleChipPress = (selectedItem, index) => {
-    // console.log('Selected item:', selectedItem.name);
+  const handleChipPress = selectedItem => {
     setCategory(selectedItem.name);
   };
 
-  // const check = () => {
-  //   console.log('abu id', id);
-  //   //setCategory(selectedItem);
-  // };
-  // //down
-
   return (
     <>
+      <Spacer isStatusBarHeigt />
+      <StatusBars.Light />
       <Headers.Primary
         auth
         containerStyle={styles.headerContainer}
@@ -74,7 +67,6 @@ function AddExpense(props) {
         title={'Add Expense'}
       />
       <Wrapper
-        //marginVerticalBase
         style={{
           backgroundColor: colors.appBgColor2,
         }}
@@ -116,19 +108,6 @@ function AddExpense(props) {
                 keyName={'name'}
                 textStyle={[appStyles.textMedium, appStyles.fontMedium]}
               />
-              {/* down */}
-
-              {/* <Chips.Primary
-                onPress={value => setColor(value.label)}
-                containerStyle={styles.chipContainer}
-                buttonStyle={[
-                  appStyles.backgroundColorWhite,
-                  appStyles.paddingHorizontalTiny,
-                ]}
-                textStyle={appStyles.textMedium}
-                data={categories}
-                keyName={'label'}
-              /> */}
             </Wrapper>
           </Wrapper>
           <Spacer isDoubleBase />

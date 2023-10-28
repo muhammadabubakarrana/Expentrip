@@ -4,47 +4,34 @@ import {Buttons, Images, Text, Toasts, Wrapper} from '../../../components';
 import {appImages, appStyles, colors, routes} from '../../../services';
 import {width, height} from 'react-native-dimension';
 import auth from '@react-native-firebase/auth';
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import firestore from '@react-native-firebase/firestore';
 
 export default function Welcome(props) {
-  useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        '235370682019-n21f79e1e3u583mgkiecfd5qalidoh5v.apps.googleusercontent.com',
-    });
-  }, []);
-  const [User, setUser] = useState();
+  GoogleSignin.configure({
+    webClientId:
+      '235370682019-lm7jmfn8k670ag2prggpc55jkka7u3fm.apps.googleusercontent.com',
+  });
+  // const SingInGoogle = async () => {
+  //   //setLoader(true)
+  //   try {
+  //     const {idToken} = await GoogleSignin.signIn();
+  //     console.log('ssss google login idToken', idToken);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  //   // try {
+  //   //   const {idToken} = await GoogleSignin.signIn();
+  //   //   console.log('ssss google login idToken', idToken);
+  //   //   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  //   //   console.log('ssss google login data', googleCredential);
+  //   //   await auth().signInWithCredential(googleCredential);
+  //   //   //navigate(routes.app);
+  //   // } catch (e) {
+  //   //   console.log('Abubakar', e);
+  //   // }
+  // };
   const {navigate} = props.navigation;
-  const signIn = async () => {
-    try {
-      console.log('a');
-      // Check if your device supports Google Play
-      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-      // Get the users ID
-      console.log('b');
-      const {idToken} = await GoogleSignin.signIn();
-      console.log('c');
-      // Create a Google credential with the token
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-      // Sign-in the user with the credential
-      return auth().signInWithCredential(googleCredential);
-    } catch (error) {
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        // user cancelled the login flow
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (e.g. sign in) is in progress already
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
-      } else {
-        console.log('e', error);
-        // some other error happened
-      }
-    }
-  };
 
   return (
     <Wrapper
@@ -91,10 +78,20 @@ export default function Welcome(props) {
             buttonStyle={{backgroundColor: colors.green}}
           />
         </Wrapper>
-        <Wrapper alignItemsCenter>
-          <TouchableOpacity onPress={() => signIn()}>
-            <Images.Round size={55} source={appImages.google} />
-          </TouchableOpacity>
+        <Wrapper>
+          <Buttons.Colored
+            onPress={() => navigate(routes.PhoneVerification)}
+            textStyle={[
+              appStyles.textLarge,
+              appStyles.fontBold,
+              appStyles.textWhite,
+            ]}
+            text={'Sign Up Using Phone'}
+            iconName="account-plus"
+            iconType="material-community"
+            animation={'zoomInUp'}
+            buttonStyle={{backgroundColor: colors.green}}
+          />
         </Wrapper>
       </Wrapper>
     </Wrapper>

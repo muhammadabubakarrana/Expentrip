@@ -21,10 +21,10 @@ export default function Navigation() {
     dispatch(setUser(u));
   }
 
-  useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    return subscriber; // unsubscribe on unmount
-  }, []);
+  // useEffect(() => {
+  //   const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+  //   return subscriber; // unsubscribe on unmount
+  // }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +48,9 @@ export default function Navigation() {
       <NavigationContainer ref={navigationRef}>
         <MainStack.Navigator
           screenOptions={{headerShown: false}}
-          initialRouteName={routes.app}>
+          initialRouteName={routes.auth}>
+          <MainStack.Screen name={routes.auth} component={AuthNavigation} />
+
           <MainStack.Screen name={routes.app} component={AppNavigation} />
         </MainStack.Navigator>
       </NavigationContainer>

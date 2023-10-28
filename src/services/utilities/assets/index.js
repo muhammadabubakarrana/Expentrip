@@ -18,6 +18,7 @@ const appImages = {
   login: require('../../../assets/images/login.png'),
   signup: require('../../../assets/images/signup.png'),
   google: require('../../../assets/images/googleIcon.png'),
+  checkmark: require('../../../assets/images/checkmark.png'),
 };
 
 const appIcons = {

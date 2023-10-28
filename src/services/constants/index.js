@@ -18,6 +18,10 @@ export const routes = {
   addTrips: 'Add Trips',
   addExpense: 'Add Expense',
   tripExpense: 'Trip Expense',
+  forgotPassword: 'forgotPassword',
+  AccountSettings: 'Account Settings',
+  PhoneVerification: 'PhoneVerification',
+  CodeVerification: 'CodeVerification',
 };
 export const headers = {
   screenOptions: {
@@ -48,9 +52,9 @@ export const categories = [
   // 'Entertainment',
   // 'Commute',
   // 'Other',
-  {id: 1, label: 'Food', value: "food"},
-  {id: 2, label: 'Shopping', value: "Shopping"},
-  {id: 3, label: 'Entertainment', value: "Entertainment"},
-  {id: 4, label: 'Commute', value: "Commute"},
-  {id: 5, label: 'Other', value: "Other"},
+  {id: 1, label: 'Food', value: 'food'},
+  {id: 2, label: 'Shopping', value: 'Shopping'},
+  {id: 3, label: 'Entertainment', value: 'Entertainment'},
+  {id: 4, label: 'Commute', value: 'Commute'},
+  {id: 5, label: 'Other', value: 'Other'},
 ];

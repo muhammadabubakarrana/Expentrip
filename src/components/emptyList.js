@@ -9,7 +9,7 @@ export default EmptyList = ({message}) => {
   return (
     <Wrapper
       paddingVerticalSmall
-      marginVerticalLarge
+      marginVerticalSmall
       style={appStyles.shadow}
       isCardView
       alignItemsCenter

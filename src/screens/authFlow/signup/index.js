@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import {View, Image} from 'react-native';
+import {View, Platform} from 'react-native';
 import {height, width, totalSize} from 'react-native-dimension';
 import {
   Toasts,
@@ -11,6 +11,7 @@ import {
   Spacer,
   Text,
   MyLoader,
+  Images,
 } from '../../../components';
 import {
   appImages,
@@ -23,10 +24,14 @@ import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import ImagePicker from 'react-native-image-crop-picker';
+import {UploadPicuture} from '../../../Backend';
 
 function Signup(props) {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  //const [ImageUrl, setImageUrl] = useState(null);
+
   const {navigate} = props.navigation;
 
   const {
@@ -56,6 +61,7 @@ function Signup(props) {
         lastName,
         email,
         password,
+        //   ImageUrl,
       });
       console.log('res', res);
       navigate(routes.signin);
@@ -66,19 +72,35 @@ function Signup(props) {
     }
   };
 
+  // const pickImage = () => {
+  //   try {
+  //     ImagePicker.openPicker({
+  //       width: 300,
+  //       height: 400,
+  //       cropping: true,
+  //     }).then(image => {
+  //       const URL = image?.path;
+  //       console.log('image', URL);
+  //       // setImageUrl(URL);
+  //       UploadPicuture(URL, setImageUrl);
+  //     });
+  //   } catch (error) {
+  //     console.log('lib errr===>', error?.message);
+  //   }
+  // };
+
   return (
     <>
       <Wrapper isMain style={{backgroundColor: colors.appBgColor3}}>
         <ScrollViews.KeyboardAvoiding>
           <Spacer isBasic />
-          <Wrapper alignItemsCenter>
-            <Image
-              style={{width: width(70), height: height(30)}}
-              resizeMode="cover"
-              source={appImages.signup}
-            />
-            <Spacer isDoubleBase />
-          </Wrapper>
+          {/* <Wrapper alignItemsCenter>
+            {ImageUrl !== null ? (
+              <Images.Profile onPress={pickImage} source={{uri: ImageUrl}} />
+            ) : (
+              <Images.Profile onPress={pickImage} source={appImages.google} />
+            )}
+          </Wrapper> */}
           <Spacer isBasic />
           <Wrapper marginHorizontalBase>
             <Wrapper marginHorizontalBase flexDirectionRow alignItemsCenter>
@@ -195,9 +217,10 @@ function Signup(props) {
             </Wrapper>
             <Spacer isDoubleBase />
             {showLoader ? (
-              <MyLoader isVisible={showLoader}/>
+              <MyLoader isVisible={showLoader} />
             ) : (
               <Buttons.Colored
+                //onPress={UploadPicuture}
                 onPress={handleSubmit(onSubmit)}
                 buttonColor={colors.green}
                 text="Sign Up Now"
